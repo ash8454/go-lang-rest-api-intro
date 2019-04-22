@@ -2,7 +2,7 @@ package main
 
 
 import (
-	// "fmt"
+	"fmt"
 	"encoding/json"
 	"log"
 	"github.com/gorilla/mux"
@@ -103,4 +103,5 @@ func main() {
 	r.HandleFunc("/api/books/{id}", updateBook).Methods("PUT")
 	r.HandleFunc("/api/books/{id}", deleteBook).Methods("DELETE")
 	log.Fatal(http.ListenAndServe(":8080", r))
+	fmt.Printf("Connected to port 8080\n")
 }
